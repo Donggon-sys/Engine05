@@ -6,14 +6,66 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B94FE2C2F99F1AD0089DCB4 /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FE2B2F99F1AD0089DCB4 /* libglfw.3.dylib */; };
+		0B94FEED2F99FACA0089DCB4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEEC2F99FACA0089DCB4 /* Cocoa.framework */; };
+		0B94FEEF2F99FAD10089DCB4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEEE2F99FAD10089DCB4 /* IOKit.framework */; };
+		0B94FEF12F99FAF50089DCB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF02F99FAF50089DCB4 /* CoreGraphics.framework */; };
+		0B94FEF32F99FAFD0089DCB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF22F99FAFD0089DCB4 /* QuartzCore.framework */; };
+		0B94FEF52F99FB130089DCB4 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF42F99FB130089DCB4 /* Metal.framework */; };
+		0B94FEF72F99FB190089DCB4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF62F99FB190089DCB4 /* Accelerate.framework */; };
+		0B94FEFF2F9A00100089DCB4 /* libglfw.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B94FEFD2F99FFD90089DCB4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B94FEFF2F9A00100089DCB4 /* libglfw.3.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B6ECDB92F9790C80018F635 /* Engine05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Engine05.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B94FE2B2F99F1AD0089DCB4 /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.dylib; path = "../../../env_cpp/glfw-3.4.bin.MACOS/lib-arm64/libglfw.3.dylib"; sourceTree = "<group>"; };
+		0B94FEEC2F99FACA0089DCB4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0B94FEEE2F99FAD10089DCB4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		0B94FEF02F99FAF50089DCB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0B94FEF22F99FAFD0089DCB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0B94FEF42F99FB130089DCB4 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		0B94FEF62F99FB190089DCB4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.dylib; path = "../../../env_cpp/glfw-3.4.bin.MACOS/lib-arm64/libglfw.3.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0B6ECDBB2F9790C80018F635 /* Engine05 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Engine05;
+			sourceTree = "<group>";
+		};
+		0B94FE322F99F2370089DCB4 /* Application */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0B94FE332F99F2950089DCB4 /* Renderer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		0B94FE352F99F2FC0089DCB4 /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0B94FE392F99F4C30089DCB4 /* Audio */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +75,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B94FEF32F99FAFD0089DCB4 /* QuartzCore.framework in Frameworks */,
+				0B94FEF72F99FB190089DCB4 /* Accelerate.framework in Frameworks */,
+				0B94FEF12F99FAF50089DCB4 /* CoreGraphics.framework in Frameworks */,
+				0B94FEED2F99FACA0089DCB4 /* Cocoa.framework in Frameworks */,
+				0B94FE2C2F99F1AD0089DCB4 /* libglfw.3.dylib in Frameworks */,
+				0B94FEF52F99FB130089DCB4 /* Metal.framework in Frameworks */,
+				0B94FEEF2F99FAD10089DCB4 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +91,13 @@
 		0B6ECDB02F9790C80018F635 = {
 			isa = PBXGroup;
 			children = (
+				0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */,
+				0B94FE392F99F4C30089DCB4 /* Audio */,
+				0B94FE352F99F2FC0089DCB4 /* Assets */,
+				0B94FE332F99F2950089DCB4 /* Renderer */,
+				0B94FE322F99F2370089DCB4 /* Application */,
 				0B6ECDBB2F9790C80018F635 /* Engine05 */,
+				0B94FE2A2F99F1AD0089DCB4 /* Frameworks */,
 				0B6ECDBA2F9790C80018F635 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +110,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0B94FE2A2F99F1AD0089DCB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B94FEF62F99FB190089DCB4 /* Accelerate.framework */,
+				0B94FEF42F99FB130089DCB4 /* Metal.framework */,
+				0B94FEF22F99FAFD0089DCB4 /* QuartzCore.framework */,
+				0B94FEF02F99FAF50089DCB4 /* CoreGraphics.framework */,
+				0B94FEEE2F99FAD10089DCB4 /* IOKit.framework */,
+				0B94FEEC2F99FACA0089DCB4 /* Cocoa.framework */,
+				0B94FE2B2F99F1AD0089DCB4 /* libglfw.3.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -55,6 +134,7 @@
 				0B6ECDB52F9790C80018F635 /* Sources */,
 				0B6ECDB62F9790C80018F635 /* Frameworks */,
 				0B6ECDB72F9790C80018F635 /* Resources */,
+				0B94FEFD2F99FFD90089DCB4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -62,6 +142,10 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0B6ECDBB2F9790C80018F635 /* Engine05 */,
+				0B94FE322F99F2370089DCB4 /* Application */,
+				0B94FE332F99F2950089DCB4 /* Renderer */,
+				0B94FE352F99F2FC0089DCB4 /* Assets */,
+				0B94FE392F99F4C30089DCB4 /* Audio */,
 			);
 			name = Engine05;
 			packageProductDependencies = (
@@ -244,13 +328,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = Engine05/Engine05.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63AWKUZW28;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/chenruyi/env_cpp/glfw-3.4.bin.MACOS/include/",
+					"/Users/chenruyi/env_cpp/metal-cpp",
+					/Users/chenruyi/env_cpp/gltf/,
+					/Users/chenruyi/env_cpp/miniaudio,
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -258,6 +350,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "/Users/chenruyi/env_cpp/glfw-3.4.bin.MACOS/lib-arm64";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenruyi.Engine05;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,13 +363,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_ENTITLEMENTS = Engine05/Engine05.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 63AWKUZW28;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/chenruyi/env_cpp/glfw-3.4.bin.MACOS/include/",
+					"/Users/chenruyi/env_cpp/metal-cpp",
+					/Users/chenruyi/env_cpp/gltf/,
+					/Users/chenruyi/env_cpp/miniaudio,
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -284,6 +385,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "/Users/chenruyi/env_cpp/glfw-3.4.bin.MACOS/lib-arm64";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenruyi.Engine05;
 				PRODUCT_NAME = "$(TARGET_NAME)";
