@@ -22,6 +22,7 @@ private:
     std::unique_ptr<Window>(m_Window);
     CA::MetalLayer *m_Layer;
     MTL::Device *m_Device;
+    std::unique_ptr<Audio>(m_Audio);
     
 public:
     Application();

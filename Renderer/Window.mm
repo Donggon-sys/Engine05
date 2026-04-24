@@ -50,5 +50,5 @@ void Window::renderLoop() {
 }
 
 Window::~Window() {
-    
+    glfwTerminate();
 }
