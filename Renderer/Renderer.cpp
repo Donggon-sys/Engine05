@@ -39,5 +39,5 @@ void Renderer::render() {
 }
 
 Renderer::~Renderer() {
-    
+    m_CommandQueue->release();
 }

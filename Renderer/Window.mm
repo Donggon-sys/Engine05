@@ -7,6 +7,7 @@
 
 #include "Window.hpp"
 #include "Renderer.hpp"
+#include "FRController.hpp"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -20,6 +21,8 @@
 Window::Window(MTL::Device *device, CA::MetalLayer *layer) : m_Layer(layer), m_Device(device) {
     createWindow();
     createRenderer();
+    createFRContoller();
+    m_FRController->init();
 }
 
 void Window::createWindow() {
@@ -40,12 +43,37 @@ void Window::createRenderer() {
     m_Renderer = std::make_unique<Renderer>(m_Device, m_Layer);
 }
 
+void Window::createFRContoller() {
+    m_FRController = std::make_unique<FRController>();
+}
+
+void Window::setCursorPos() {
+    int width, height;
+    glfwGetWindowSize(m_Window, &width, &height);
+    glfwSetCursorPos(m_Window, static_cast<double>(width / 2.0), static_cast<double>(height / 2.0));
+}
+
 void Window::renderLoop() {
     glfwShowWindow(m_Window);
     
+    int initCount = 0;
     while (!glfwWindowShouldClose(m_Window)) {
         glfwPollEvents();
-        m_Renderer->render();
+        
+        switch (initCount) {
+            case 0: {
+                setCursorPos();
+                initCount++;
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        if (m_FRController->needTORender()) {
+            m_Renderer->render();
+        }
     }
 }
 

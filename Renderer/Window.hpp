@@ -10,6 +10,7 @@
 
 typedef struct GLFWwindow GLFWwindow;
 class Renderer;
+class FRController;
 namespace CA {
 class MetalLayer;
 }
@@ -23,11 +24,14 @@ private:
     MTL::Device *m_Device;
     CA::MetalLayer *m_Layer;
     std::unique_ptr<Renderer>(m_Renderer);
+    std::unique_ptr<FRController>(m_FRController);
     
 public:
     explicit Window(MTL::Device *device, CA::MetalLayer *layer);
     void createWindow();
     void createRenderer();
+    void setCursorPos();
+    void createFRContoller();
     void renderLoop();
     ~Window();
 };
