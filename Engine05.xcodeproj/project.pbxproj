@@ -14,18 +14,19 @@
 		0B94FEF32F99FAFD0089DCB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF22F99FAFD0089DCB4 /* QuartzCore.framework */; };
 		0B94FEF52F99FB130089DCB4 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF42F99FB130089DCB4 /* Metal.framework */; };
 		0B94FEF72F99FB190089DCB4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B94FEF62F99FB190089DCB4 /* Accelerate.framework */; };
-		0B94FEFF2F9A00100089DCB4 /* libglfw.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0BD15A832F9B894F00D3B82F /* libglfw.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 0B94FE2B2F99F1AD0089DCB4 /* libglfw.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B94FEFD2F99FFD90089DCB4 /* CopyFiles */ = {
+		0BD15A842F9B894F00D3B82F /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B94FEFF2F9A00100089DCB4 /* libglfw.3.dylib in CopyFiles */,
+				0BD15A832F9B894F00D3B82F /* libglfw.3.dylib in Embed Libraries */,
 			);
+			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -68,6 +69,11 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		0BD15A822F9B890200D3B82F /* AssetsMannger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AssetsMannger;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */,
+				0BD15A822F9B890200D3B82F /* AssetsMannger */,
 				0B94FE392F99F4C30089DCB4 /* Audio */,
 				0B94FE352F99F2FC0089DCB4 /* Assets */,
 				0B94FE332F99F2950089DCB4 /* Renderer */,
@@ -134,7 +141,7 @@
 				0B6ECDB52F9790C80018F635 /* Sources */,
 				0B6ECDB62F9790C80018F635 /* Frameworks */,
 				0B6ECDB72F9790C80018F635 /* Resources */,
-				0B94FEFD2F99FFD90089DCB4 /* CopyFiles */,
+				0BD15A842F9B894F00D3B82F /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -146,6 +153,7 @@
 				0B94FE332F99F2950089DCB4 /* Renderer */,
 				0B94FE352F99F2FC0089DCB4 /* Assets */,
 				0B94FE392F99F4C30089DCB4 /* Audio */,
+				0BD15A822F9B890200D3B82F /* AssetsMannger */,
 			);
 			name = Engine05;
 			packageProductDependencies = (

@@ -6,7 +6,6 @@
 //
 
 #include "Audio.hpp"
-//#define MINIAUDIO_IMPLEMENTATION
 #include <miniaudio.h>
 #include <Foundation/Foundation.hpp>
 #include <string>
@@ -22,18 +21,20 @@ Audio::Audio() {
     resourcePath = resourcePath + "/";
     std::string filePath = resourcePath + "test.wav";
     
-    rel = ma_sound_init_from_file(&m_AudioEngine, filePath.c_str(), 0, NULL, NULL, &m_Sound);
+    m_Sound = new ma_sound();
+    rel = ma_sound_init_from_file(&m_AudioEngine, filePath.c_str(), 0, NULL, NULL, m_Sound);
     if (rel != MA_SUCCESS) {
         return;
     }
-//    playLoop();
+    playLoop();
 }
 
 Audio::~Audio() {
+    ma_sound_uninit(m_Sound);
     ma_engine_uninit(&m_AudioEngine);
-    ma_sound_uninit(&m_Sound);
+    delete m_Sound;
 }
 
 void Audio::playLoop() {
-    ma_sound_start(&m_Sound);
+    ma_sound_start(m_Sound);
 }
