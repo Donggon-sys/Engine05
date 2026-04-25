@@ -50,13 +50,14 @@ void Window::createFRContoller() {
 void Window::setCursorPos() {
     int width, height;
     glfwGetWindowSize(m_Window, &width, &height);
-    glfwSetCursorPos(m_Window, static_cast<double>(width / 2.0), static_cast<double>(height / 2.0));
+    glfwSetCursorPos(m_Window, static_cast<double>(width / 2), static_cast<double>(height / 2));
 }
 
 void Window::renderLoop() {
     glfwShowWindow(m_Window);
     
     int initCount = 0;
+    FrameSize frameSize;
     while (!glfwWindowShouldClose(m_Window)) {
         glfwPollEvents();
         
@@ -72,7 +73,8 @@ void Window::renderLoop() {
         }
         
         if (m_FRController->needTORender()) {
-            m_Renderer->render();
+            glfwGetFramebufferSize(m_Window, &frameSize.width, &frameSize.height);
+            m_Renderer->render(&frameSize);
         }
     }
 }

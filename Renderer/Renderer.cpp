@@ -13,7 +13,9 @@ Renderer::Renderer(MTL::Device *device, CA::MetalLayer *layer) : m_Device(device
     m_CommandQueue = m_Device->newCommandQueue();
 }
 
-void Renderer::render() {
+void Renderer::render(FrameSize *size) {
+    m_Layer->setDrawableSize(CGSizeMake(size->width, size->height));
+    
     NS::AutoreleasePool *pool = NS::AutoreleasePool::alloc()->init();
     
     CA::MetalDrawable *drawable = m_Layer->nextDrawable();

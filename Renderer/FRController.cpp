@@ -22,7 +22,7 @@ void FRController::setDuration(int frameRate) {
 }
 
 FRController::FRController() {
-    int64_t time = 1000000 / 60;
+    int64_t time = 1E6 / 60;
     std::chrono::duration<int64_t, std::micro> d(time);
     m_DurationTime = d;
 }

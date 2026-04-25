@@ -13,6 +13,11 @@ namespace MTL {
 class Device;
 class CommandQueue;
 }
+//typedef struct CGSize CGSize;
+struct FrameSize {
+    int width;
+    int height;
+};
 
 class Renderer {
 private:
@@ -22,6 +27,6 @@ private:
     
 public:
     explicit Renderer(MTL::Device *device, CA::MetalLayer *layer);
-    void render();
+    void render(FrameSize *size);
     ~Renderer();
 };

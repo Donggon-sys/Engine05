@@ -36,5 +36,6 @@ Audio::~Audio() {
 }
 
 void Audio::playLoop() {
+    ma_sound_set_volume(m_Sound, 0.4);
     ma_sound_start(m_Sound);
 }
