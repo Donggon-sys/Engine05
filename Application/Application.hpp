@@ -10,6 +10,7 @@
 
 class Audio;
 class Window;
+class Game;
 namespace CA {
 class MetalLayer;
 }
@@ -19,13 +20,15 @@ class Device;
 
 class Application {
 private:
-    std::unique_ptr<Window>(m_Window);
+    std::unique_ptr<Window> m_Window;
     CA::MetalLayer *m_Layer;
     MTL::Device *m_Device;
-    std::unique_ptr<Audio>(m_Audio);
+    std::unique_ptr<Audio> m_Audio;
+    std::shared_ptr<Game> m_Game;
     
 public:
     Application();
     void runLoop();
+    void build();
     ~Application();
 };

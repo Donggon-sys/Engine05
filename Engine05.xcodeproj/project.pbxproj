@@ -69,9 +69,14 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		0BD15A822F9B890200D3B82F /* AssetsMannger */ = {
+		0BCFEC432FA47A9900A4524A /* SceneManager */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AssetsMannger;
+			path = SceneManager;
+			sourceTree = "<group>";
+		};
+		0BD15A822F9B890200D3B82F /* ResManager */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ResManager;
 			sourceTree = "<group>";
 		};
 		0BD15A852F9B8A5C00D3B82F /* Game */ = {
@@ -103,8 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				0B94FEFE2F9A00100089DCB4 /* libglfw.3.dylib */,
+				0BCFEC432FA47A9900A4524A /* SceneManager */,
 				0BD15A852F9B8A5C00D3B82F /* Game */,
-				0BD15A822F9B890200D3B82F /* AssetsMannger */,
+				0BD15A822F9B890200D3B82F /* ResManager */,
 				0B94FE392F99F4C30089DCB4 /* Audio */,
 				0B94FE352F99F2FC0089DCB4 /* Assets */,
 				0B94FE332F99F2950089DCB4 /* Renderer */,
@@ -159,7 +165,8 @@
 				0B94FE332F99F2950089DCB4 /* Renderer */,
 				0B94FE352F99F2FC0089DCB4 /* Assets */,
 				0B94FE392F99F4C30089DCB4 /* Audio */,
-				0BD15A822F9B890200D3B82F /* AssetsMannger */,
+				0BCFEC432FA47A9900A4524A /* SceneManager */,
+				0BD15A822F9B890200D3B82F /* ResManager */,
 				0BD15A852F9B8A5C00D3B82F /* Game */,
 			);
 			name = Engine05;

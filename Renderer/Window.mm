@@ -7,6 +7,7 @@
 
 #include "Window.hpp"
 #include "Renderer.hpp"
+#include "Input.hpp"
 #include "FRController.hpp"
 
 #define GLFW_INCLUDE_NONE
@@ -47,13 +48,26 @@ void Window::createFRContoller() {
     m_FRController = std::make_unique<FRController>();
 }
 
+void Window::createInput() {
+//    m_Input = new Input(m_Game);
+}
+
 void Window::setCursorPos() {
     int width, height;
     glfwGetWindowSize(m_Window, &width, &height);
-    glfwSetCursorPos(m_Window, static_cast<double>(width / 2), static_cast<double>(height / 2));
+}
+
+void Window::setGameObject(std::shared_ptr<Game> game) {
+//    m_Game = game;
+    m_Input = new Input(game);
 }
 
 void Window::renderLoop() {
+    glfwSetWindowUserPointer(m_Window, m_Input);
+    glfwSetKeyCallback(m_Window, Input::keyCallBack);
+    glfwSetCursorPosCallback(m_Window, Input::cursorCallBack);
+    glfwSetCursorEnterCallback(m_Window, Input::cursorEnterCallBack);
+    
     glfwShowWindow(m_Window);
     
     int initCount = 0;
@@ -80,5 +94,6 @@ void Window::renderLoop() {
 }
 
 Window::~Window() {
+    delete m_Input;
     glfwTerminate();
 }

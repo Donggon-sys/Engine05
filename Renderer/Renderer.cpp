@@ -30,7 +30,9 @@ void Renderer::render(FrameSize *size) {
     pass->colorAttachments()->object(NS::UInteger(0))->setLoadAction(MTL::LoadActionClear);
     pass->colorAttachments()->object(NS::UInteger(0))->setStoreAction(MTL::StoreActionStore);
     
-    MTL::RenderCommandEncoder *encoder = pCommandBuffer->renderCommandEncoder(pass);
+//    MTL::RenderCommandEncoder *encoder = pCommandBuffer->renderCommandEncoder(pass);
+//    encoder->endEncoding();
+    MTL::ParallelRenderCommandEncoder *encoder = pCommandBuffer->parallelRenderCommandEncoder(pass);
     encoder->endEncoding();
     
     pCommandBuffer->presentDrawable(drawable);

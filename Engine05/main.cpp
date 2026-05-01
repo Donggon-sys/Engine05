@@ -9,6 +9,7 @@
 
 int main(int argc, char *argv[ ]) {
     Application app;
+    app.build();
     app.runLoop();
     
     return 0;

@@ -26,7 +26,7 @@ Audio::Audio() {
     if (rel != MA_SUCCESS) {
         return;
     }
-    playLoop();
+//    playLoop();
 }
 
 Audio::~Audio() {
