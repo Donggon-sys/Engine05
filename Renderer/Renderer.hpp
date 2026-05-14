@@ -7,6 +7,7 @@
 
 #pragma once
 #include "../EventBus/EventBus.hpp"
+#include "../EventBus/EventType.hpp"
 namespace CA {
 class MetalLayer;
 }
@@ -15,7 +16,7 @@ class Device;
 class CommandQueue;
 }
 //typedef struct CGSize CGSize;
-//typedef struct {int width; int height;} EventWindowReSize;
+//struct EventWindowReSize{int width; int height;};
 struct FrameSize {
     int width;
     int height;

@@ -6,6 +6,7 @@
 //
 
 #include "EventBus.hpp"
+#include "EventType.hpp"
 
 //EventBus::EventBus() {
 //    

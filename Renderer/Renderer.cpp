@@ -7,6 +7,7 @@
 
 #include "Renderer.hpp"
 #include "../EventBus/EventBus.hpp"
+#include "../EventBus/EventType.hpp"
 #include <Metal/Metal.hpp>
 #include <iostream>
 #include <functional>

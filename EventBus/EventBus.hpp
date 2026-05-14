@@ -23,8 +23,6 @@
 //    void subScribeWindowReSize(WindowReSizeFunc func);
 //};
 
-typedef struct {int width; int height;} EventWindowReSize;
-
 template <typename Event>
 class EventBus {
 private:
@@ -36,7 +34,7 @@ public:
     EventBus(const EventBus&) = delete;
     EventBus& operator=(const EventBus&) = delete;
     static EventBus &getInstance() {
-        static EventBus instance;
+        static EventBus<Event> instance;
         return instance;
     }
     

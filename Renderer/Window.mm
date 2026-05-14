@@ -10,6 +10,7 @@
 #include "Input.hpp"
 #include "FRController.hpp"
 #include "../EventBus/EventBus.hpp"
+#include "../EventBus/EventType.hpp"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
