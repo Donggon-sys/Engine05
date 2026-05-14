@@ -39,5 +39,10 @@ public:
     void createFRContoller();
     void createInput();
     void renderLoop();
+    
+    static void windowReSizeCallBack(GLFWwindow *window, int width, int height);
     ~Window();
 };
+
+
+//void transferLayerType(GLFWwindow *window, CA::MetalLayer *layer);

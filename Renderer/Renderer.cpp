@@ -6,11 +6,26 @@
 //
 
 #include "Renderer.hpp"
+#include "../EventBus/EventBus.hpp"
 #include <Metal/Metal.hpp>
+#include <iostream>
+#include <functional>
 #include <QuartzCore/QuartzCore.hpp>
 
 Renderer::Renderer(MTL::Device *device, CA::MetalLayer *layer) : m_Device(device), m_Layer(layer) {
     m_CommandQueue = m_Device->newCommandQueue();
+    build();
+}
+
+void Renderer::build() {
+    EventBus &eventbus = EventBus::getInstance();
+    
+    WindowReSizeFunc func = std::bind(&Renderer::viewportReSize, this, std::placeholders::_1, std::placeholders::_2);
+    eventbus.subScribeWindowReSize(func);
+}
+
+void Renderer::viewportReSize(int width, int height) {
+    std::cout << "Renderer: resize: " << width << ", " << height << std::endl;
 }
 
 void Renderer::render(FrameSize *size) {

@@ -28,5 +28,7 @@ private:
 public:
     explicit Renderer(MTL::Device *device, CA::MetalLayer *layer);
     void render(FrameSize *size);
+    void build();
+    void viewportReSize(int width, int height);
     ~Renderer();
 };

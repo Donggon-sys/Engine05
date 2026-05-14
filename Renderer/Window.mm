@@ -9,6 +9,7 @@
 #include "Renderer.hpp"
 #include "Input.hpp"
 #include "FRController.hpp"
+#include "../EventBus/EventBus.hpp"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -62,11 +63,17 @@ void Window::setGameObject(std::shared_ptr<Game> game) {
     m_Input = new Input(game);
 }
 
+void Window::windowReSizeCallBack(GLFWwindow *window, int width, int height) {
+    EventBus &eventbus = EventBus::getInstance();
+    eventbus.registerWindowReSize(width, height);
+}
+
 void Window::renderLoop() {
     glfwSetWindowUserPointer(m_Window, m_Input);
     glfwSetKeyCallback(m_Window, Input::keyCallBack);
     glfwSetCursorPosCallback(m_Window, Input::cursorCallBack);
     glfwSetCursorEnterCallback(m_Window, Input::cursorEnterCallBack);
+    glfwSetWindowSizeCallback(m_Window, Window::windowReSizeCallBack);
     
     glfwShowWindow(m_Window);
     
@@ -91,9 +98,18 @@ void Window::renderLoop() {
             m_Renderer->render(&frameSize);
         }
     }
+    glfwDestroyWindow(m_Window);
 }
 
 Window::~Window() {
     delete m_Input;
     glfwTerminate();
 }
+
+//void transferLayerType(GLFWwindow *window, CA::MetalLayer *layer) {
+//    @autoreleasepool {
+//        NSWindow *nswindow = glfwGetCocoaWindow(window);
+//        nswindow.contentView.layer = (__bridge CAMetalLayer *)layer;
+//        nswindow.contentView.wantsLayer = YES;
+//    }
+//}
