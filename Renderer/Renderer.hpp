@@ -6,6 +6,7 @@
 //
 
 #pragma once
+#include "../EventBus/EventBus.hpp"
 namespace CA {
 class MetalLayer;
 }
@@ -14,6 +15,7 @@ class Device;
 class CommandQueue;
 }
 //typedef struct CGSize CGSize;
+//typedef struct {int width; int height;} EventWindowReSize;
 struct FrameSize {
     int width;
     int height;
@@ -29,6 +31,6 @@ public:
     explicit Renderer(MTL::Device *device, CA::MetalLayer *layer);
     void render(FrameSize *size);
     void build();
-    void viewportReSize(int width, int height);
+    void viewportReSize(EventWindowReSize size);
     ~Renderer();
 };

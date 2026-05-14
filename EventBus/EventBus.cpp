@@ -7,25 +7,26 @@
 
 #include "EventBus.hpp"
 
-EventBus::EventBus() {
-    
-}
+//EventBus::EventBus() {
+//    
+//}
+//
+//EventBus::~EventBus() {
+//    
+//}
+//
+//EventBus &EventBus::getInstance() {
+//    static EventBus instance;
+//    return instance;
+//}
+//
+//void EventBus::registerWindowReSize(int width, int height) {
+//    for (auto &func : m_WindowReSizeFun) {
+//        func(width, height);
+//    }
+//}
+//
+//void EventBus::subScribeWindowReSize(WindowReSizeFunc func) {
+//    m_WindowReSizeFun.push_back(func);
+//}
 
-EventBus::~EventBus() {
-    
-}
-
-EventBus &EventBus::getInstance() {
-    static EventBus instance;
-    return instance;
-}
-
-void EventBus::registerWindowReSize(int width, int height) {
-    for (auto &func : m_WindowReSizeFun) {
-        func(width, height);
-    }
-}
-
-void EventBus::subScribeWindowReSize(WindowReSizeFunc func) {
-    m_WindowReSizeFun.push_back(func);
-}

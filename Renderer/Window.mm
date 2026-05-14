@@ -64,8 +64,11 @@ void Window::setGameObject(std::shared_ptr<Game> game) {
 }
 
 void Window::windowReSizeCallBack(GLFWwindow *window, int width, int height) {
-    EventBus &eventbus = EventBus::getInstance();
-    eventbus.registerWindowReSize(width, height);
+//    EventBus &eventbus = EventBus::getInstance();
+//    eventbus.registerWindowReSize(width, height);
+    EventWindowReSize resize{width, height};
+    EventBus<EventWindowReSize> &eventbus = EventBus<EventWindowReSize>::getInstance();
+    eventbus.publish(resize);
 }
 
 void Window::renderLoop() {

@@ -18,14 +18,15 @@ Renderer::Renderer(MTL::Device *device, CA::MetalLayer *layer) : m_Device(device
 }
 
 void Renderer::build() {
-    EventBus &eventbus = EventBus::getInstance();
+    EventBus<EventWindowReSize> &eventbus = EventBus<EventWindowReSize>::getInstance();
     
-    WindowReSizeFunc func = std::bind(&Renderer::viewportReSize, this, std::placeholders::_1, std::placeholders::_2);
-    eventbus.subScribeWindowReSize(func);
+//    WindowReSizeFunc func = std::bind(&Renderer::viewportReSize, this, std::placeholders::_1, std::placeholders::_2);
+    std::function<void(EventWindowReSize)> func = std::bind(&Renderer::viewportReSize, this, std::placeholders::_1);
+    eventbus.subScribe(func);
 }
 
-void Renderer::viewportReSize(int width, int height) {
-    std::cout << "Renderer: resize: " << width << ", " << height << std::endl;
+void Renderer::viewportReSize(EventWindowReSize size) {
+    std::cout << "Renderer: resize: " << size.width << ", " << size.height << std::endl;
 }
 
 void Renderer::render(FrameSize *size) {
